@@ -1,3 +1,4 @@
+import 'package:caracoroa/jogar.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {
@@ -8,6 +9,9 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  void exibirResultado(){
+    Navigator.push(context, MaterialPageRoute(builder: (context)=>Jogar()));
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,6 +26,7 @@ class _HomeState extends State<Home> {
 
             GestureDetector(
               child: Image.asset("imagens/botao_jogar.png"),
+              onTap: exibirResultado,
             )
             ]),
       ),
