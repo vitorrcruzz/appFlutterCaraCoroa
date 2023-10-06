@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:caracoroa/jogar.dart';
 import 'package:flutter/material.dart';
 
@@ -10,8 +12,16 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   void exibirResultado(){
-    Navigator.push(context, MaterialPageRoute(builder: (context)=>Jogar()));
+    
+    var itens = ['cara', 'coroa'];
+    var numero = Random().nextInt(itens.length);
+    var resultado = itens[numero];
+
+    Navigator.push(
+      context, 
+      MaterialPageRoute(builder: (context)=>Jogar(resultado)));
   }
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
